@@ -23,6 +23,12 @@ class Dropbox_Logger:
     if(not config.read(configfile)):
       self.create_config()
     self.fetch_config()
+    if(self.app_key=='' or self.app_secret==''):
+	print "Please check app secret and key, and rerun script to get token"
+        sys.exit()
+    if(self.access_token=='' or len(sys.argv)==1):
+      self.access_token = self.get_access_token()
+      config.set('dropbox','access_token',self.access_token)
     try:
       self.client = dropbox.client.DropboxClient(self.access_token)
       self.filename = sys.argv[1]
@@ -45,7 +51,6 @@ class Dropbox_Logger:
       self.access_token = self.get_access_token()
     except dropbox.rest.ErrorResponse as e:
       print "Error.Cannot connect to Dropbox"
-      print e.error
     except urllib3.exceptions.MaxRetryError:
       print "Error.Cannot connect to the Internet"
     config.set('dropbox','app_secret','')
@@ -86,7 +91,7 @@ class Dropbox_Logger:
       print "Error.Cannot connect to the Internet"
     except dropbox.rest.ErrorResponse as e:
       print "Error.Cannot connect to Dropbox"
-      print e.error
+      print e
 
 
 if __name__ == "__main__":
