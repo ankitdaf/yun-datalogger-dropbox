@@ -6,3 +6,10 @@ A project to use the Arduino Yun as a datalogger that logs to Dropbox. This exam
 For this example, the Yun reads three sensors, saves them in a text format on the SD card, and uploads the same file to Dropbox.
 
 The Arduino Sketch in this example calls the Python script to upload the file with the logged data. The Python script makes use of the [Dropbox Python Core API](https://www.dropbox.com/developers/core/start/python) for the upload.
+
+Links
+------
+
+Project page : [Yun Datalogger to Dropbox](http://ankitdaf.com/projects/DropboxDatalogger/)
+
+Instructable : [Yun Datalogger to Dropbox](http://www.instructables.com/id/Datalogging-to-Dropbox-with-Arduino-Yun/)
