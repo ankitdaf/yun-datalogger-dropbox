@@ -7,7 +7,7 @@ For this example, the Yun reads three sensors, saves them in a text format on th
 
 The Arduino Sketch in this example calls the Python script to upload the file with the logged data. The Python script makes use of the [Dropbox Python Core API](https://www.dropbox.com/developers/core/start/python) for the upload.
 
-![Schematic](https://github.com/ankitdaf/yun-datalogger-dropbox/blob/master/Schematic.jpg)
+![Schematic](https://raw.githubusercontent.com/ankitdaf/yun-datalogger-dropbox/master/Schematic.jpg)
 
 Links
 ------
